@@ -1,4 +1,43 @@
 header{
-    font-size: 56px;
+    font-size: 40px;
     text-align: center;
+    text-decoration: none;
+    background-color: #ECF0F1;
+    .container{
+        margin: 0 auto;
+        display: flex;
+        height: 90px;
+        width: 1400px;
+        flex-direction: row;
+        justify-content: space-between;
+        .logo{
+            width: 60px;
+            height: 60px;
+            margin: auto 0;
+        }
+        nav{
+            margin: auto 0;
+            ul{
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+                margin: 0;
+                li{
+                    .button.inactive{
+                        text-decoration: none;
+                        padding: 10px 20px;
+                        color: black;
+                    }
+                    .button.active{
+                        text-decoration: none;
+                        padding: 10px 20px;
+                        color: black;
+                        background-color: rgb(189, 195, 199,0.25);
+                    }
+
+
+                }
+            }
+        }
+    }
 }

@@ -5,31 +5,20 @@ import axios from 'axios';
 import Movie from '../components/Movie';
 
 const Home = () => {
-    const [movies,setMovies] = React.useState([])
-    React.useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/movie/popular?api_key=7ca784ce7c3ed576b103a9591ded4609&page=1').then((res) => {
-            console.log(res.data.results);
-            setMovies(res.data.results);
-        });
-    },[]);
     return (
-        <div>
+        <div className='main'>
         <header>
-            <Header> 
-                <div>
-                    special
-                </div>
-            </Header>
+            <Header/>
         </header>
         <section>
-            {movies.map((movie) => <Movie key={movie.id} movie={movie}/>)}
+            <div className="container">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cum modi ut dolor voluptas similique, eaque qui asperiores molestiae, magni eum repellat facere! Incidunt explicabo quibusdam corrupti tenetur maiores, vero tempore debitis quos soluta exercitationem! Qui dignissimos soluta quisquam dolorem deserunt! Consequatur ea doloremque eos? Accusantium illum ex excepturi sunt fuga, expedita nisi in perferendis vero maiores eius quibusdam sequi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam error voluptatum dolore deleniti, at iure rem impedit perferendis quia autem maiores ipsum obcaecati excepturi? Ea beatae ut accusamus magni dicta!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, facilis amet, laboriosam cupiditate quam iusto dignissimos illum non dolorem, exercitationem labore? Nostrum, inventore pariatur, debitis quos aut aspernatur nihil tempore laborum, iusto quod totam cum reprehenderit quaerat fugit maiores velit.</p>
+            </div>
         </section>
         <footer>
-            <Footer>
-                <div>
-                    special footer
-                </div>
-            </Footer>
+            <Footer/>
         </footer>
         </div>
     );
