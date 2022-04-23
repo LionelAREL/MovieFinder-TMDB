@@ -1,4 +1,38 @@
 section{ 
+
+    input{
+        height:80px;
+        width: 1400px;
+        border-radius: 50px;
+        font-size: 50px;
+        text-indent: 80px; 
+        display: block;
+    }
+
+    .input-wrapper{     
+        position: relative;
+        display: block;
+    }
+
+    .searchIcon{
+        position:absolute;
+        top:20px;
+        left: 20px;
+        height: 50px;
+    }
+
+    .searchButton{
+        position: absolute;
+        top: -5px;
+        left: 1200px;
+        color: black;
+        font-size: 40px;
+        background-color: #7F8C8D;
+        border-radius: 50px;
+        padding: 20px 60px;
+    }
+
+
     min-height: calc(100vh - 180px);
     .container{   
         width: 1400px;
