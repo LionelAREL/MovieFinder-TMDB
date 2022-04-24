@@ -7,6 +7,8 @@ section{
         font-size: 50px;
         text-indent: 80px; 
         display: block;
+        border-style: none;
+
     }
 
     .input-wrapper{     
@@ -21,17 +23,60 @@ section{
         height: 50px;
     }
 
+    .containerDetails{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .containerButton{
+        margin : 0 30px;
+    }
+
     .searchButton{
         position: absolute;
-        top: -5px;
-        left: 1200px;
+        top: -3px;
+        left: 1170px;
         color: black;
         font-size: 40px;
         background-color: #7F8C8D;
         border-radius: 50px;
         padding: 20px 60px;
+        border-style: none;
+
     }
 
+    .buttonDetails{
+        font-size: 30px;
+        padding: 20px;
+        border-radius: 50px;
+        background-color: #7F8C8D;
+        margin: 0 20px;
+        box-shadow: 0;
+        border-style: none;
+    }
+
+    .detailsSearch{
+        display: flex;
+        flex-direction: row;
+    }
+    .nameDetails{
+        color: black;
+        display: flex;
+        flex-direction: row;
+        background-color:#7F8C8D;
+        padding: 20px;
+        border-radius: 50px;
+        font-size: 30px;
+        span{}
+        form{
+            option{
+            background-color: #7F8C8D;
+            }
+        }
+
+    }
 
     min-height: calc(100vh - 180px);
     .container{   
