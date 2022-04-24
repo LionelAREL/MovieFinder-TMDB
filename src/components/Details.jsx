@@ -1,4 +1,7 @@
 import React from 'react';
+import fire from "./../assets/fire.svg";
+import upcoming from "./../assets/upcoming.svg";
+import topRated from "./../assets/top_rated.svg";
 
 const Detail = ({setDetails}) => {
     function click(query){
@@ -6,9 +9,18 @@ const Detail = ({setDetails}) => {
     }
     return (
         <div className='containerButton'>
-            <button className='buttonDetails' onClick = {() => click("upcoming")}>upcoming</button>
-            <button className='buttonDetails' onClick = {() => click("top_rated")}>top rated</button>
-            <button className='buttonDetails' onClick = {() => click("popular")}>popular</button>
+            <div className="buttonDetails">
+                <img src={fire} alt="" />
+                <button  onClick = {() => click("upcoming")}>upcoming</button>
+            </div>
+            <div className="buttonDetails">
+                <img src={upcoming} alt="" />
+                <button  onClick = {() => click("top_rated")}>top rated</button>
+            </div>
+            <div className="buttonDetails">
+                <img src={topRated} alt="" />
+                <button  onClick = {() => click("popular")}>popular</button>
+            </div>
         </div>
     );
 };

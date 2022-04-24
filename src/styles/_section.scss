@@ -32,6 +32,8 @@ section{
 
     .containerButton{
         margin : 0 30px;
+        display: flex;
+        flex-direction: row;
     }
 
     .searchButton{
@@ -48,13 +50,25 @@ section{
     }
 
     .buttonDetails{
-        font-size: 30px;
-        padding: 20px;
-        border-radius: 50px;
+        margin: 0 10px;
         background-color: #7F8C8D;
-        margin: 0 20px;
+        border-radius: 50px;
         box-shadow: 0;
         border-style: none;
+        position:relative;
+        padding: 20px 25px 20px 55px;
+        img{
+            position: absolute;
+            height: 40px;
+            left: 10px;
+            top: 15px;
+        }
+        button{
+            box-shadow: 0;
+            border-style: none; 
+            background-color: transparent;
+            font-size: 30px;
+        }
     }
 
     .detailsSearch{
@@ -69,10 +83,20 @@ section{
         padding: 20px;
         border-radius: 50px;
         font-size: 30px;
-        span{}
-        form{
-            option{
-            background-color: #7F8C8D;
+        margin: 0 20px;
+        form{     
+    font-family: Arial;
+            select{
+                font-family: Arial;
+                background-color:#7F8C8D;
+                border-style: none;
+                font-size: 30px;
+                font-weight:normal;
+                size: 6;
+                option{
+                font-family: Arial;
+                background-color: #7F8C8D;
+                }
             }
         }
 
