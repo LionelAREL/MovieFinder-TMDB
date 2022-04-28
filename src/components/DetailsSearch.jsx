@@ -1,38 +1,85 @@
+import axios from 'axios';
 import React from 'react';
 
 const DetailsSearch = () => {
-    var expanded = -1;
+    const [genres,setGenres] = React.useState([]);
 
-    function showCheckboxes(i) {
-        var checkboxes = document.getElementById("checkboxes" + i);
-        if(expanded == -1){
-            checkboxes.style.display = "block";
-            expanded = i;
+    function inputChange(){
+        let buttonDropdown = document.getElementsByClassName("dropdown-label")?.[0];
+        let input = [...document.getElementsByClassName("inputCheckbox")];
+        const selected = input.filter((inp) => inp.checked).length;
+        if(selected == 0){
+            buttonDropdown.innerHTML = "None"
         }
-        else if (expanded !== i) {
-            var checkboxestemp = document.getElementById("checkboxes" + expanded);
-            checkboxestemp.style.display = "none";
-            checkboxes.style.display = "block";
-            expanded = i;
-        } 
-        else if(i === expanded){
-            checkboxes.style.display = "none";
-            expanded = -1;
+        else if(selected == input.length){
+            buttonDropdown.innerHTML = "All selected"
+        }
+        else{
+            buttonDropdown.innerHTML = selected.toString() + " selected"
         }
     }
+
+    React.useEffect(() => {
+        axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=7ca784ce7c3ed576b103a9591ded4609&language=en-US').then((res) => {
+            let genresApi = res.data.genres;
+            let genres = [];
+            genresApi.map((i) => {
+                genres.push(<label key={i.id} className="dropdown-option">
+                <input className='inputCheckbox' type="checkbox" name="dropdown-group" value={i.id} onChange={inputChange}/>
+                <div className='nn'>{i.name}</div>
+                </label>);
+            });
+            setGenres(genres);
+        });
+    },[]);
+
+    let open = false;
+    let checkAll = false;
+    React.useEffect(() => {
+        let input = [...document.getElementsByClassName("inputCheckbox")];
+        let buttonDropdown = document.getElementsByClassName("dropdown-label")?.[0];
+        
+        buttonDropdown.addEventListener("click",(e) =>{
+            let dropdown = document.getElementsByClassName("dropdown")?.[0];
+            if(open){
+                open = false;
+                dropdown.classList.remove("on");
+            }
+            else{
+                open = true;
+                dropdown.classList.add("on");
+            }
+        });
+        let checked = document.getElementsByClassName("checked")?.[0];
+        checked.addEventListener("click",(e) =>{
+            if(checkAll){
+                checked.innerHTML = "Check all"
+                checkAll = false;
+                input.forEach((inp) => inp.checked = false);
+            }
+            else{
+                checked.innerHTML = "Uncheck all"   
+                checkAll = true;
+                input.forEach((inp) => inp.checked = true);
+            }
+            inputChange();
+        });    
+    });
+    
 
     const years = []
     years.push(<option key = "0" value="">none</option>)
     for(let i = 1950;i<2023;i++){
         years.push(<option key = {i} value={i.toString()}>{i.toString()}</option>)
     }
+
     return (
         <div className='detailsSearch'>
             <div className="nameDetails"><span> years : </span>
             <form>
                 <div className="multiselect">
                     <div className="selectBox" >
-                    <select id = "years">
+                    <select id = "years" defaultValue={''}>
                         {years}
                     </select>
                     </div>
@@ -40,17 +87,30 @@ const DetailsSearch = () => {
             </form>
             </div>
             <div className="nameDetails"> <span> adults : </span> 
-            <form>
-                <div className="multiselect">
-                    <div className="selectBox" >
-                    <select id = "adults" defaultValue={'false'}>
-                        <option key = "100" value="true">true</option>
-                        <option key = "1000" value="false" selected="selected">false</option>
-                    </select>
+                <form>
+                    <div className="multiselect">
+                        <div className="selectBox" >
+                        <select id = "adults" defaultValue="false">
+                            <option key = "100" value="true">true</option>
+                            <option key = "1000" value="false">false</option>
+                        </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div className="nameDetails">
+                <span>genres : </span>
+
+                <div className="dropdown" >
+                    <label className="dropdown-label">None</label>
+                    <div className="dropdown-list">
+                        <a href="#" className="dropdown-option checked">
+                        Check All  
+                        </a>
+                        {genres}  
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
         </div>
     );
 };

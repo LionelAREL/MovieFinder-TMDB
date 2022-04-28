@@ -3,9 +3,11 @@ import fire from "./../assets/fire.svg";
 import upcoming from "./../assets/upcoming.svg";
 import topRated from "./../assets/top_rated.svg";
 
-const Detail = ({setDetails}) => {
+const Detail = ({setDetails,setIsDetails,setPageCount}) => {
     function click(query){
         setDetails(query);
+        setIsDetails(true);
+        setPageCount(0);
     }
     return (
         <div className='containerButton'>

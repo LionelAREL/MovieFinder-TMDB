@@ -1,10 +1,128 @@
 section{ 
 
+    .pages{
+        width: 1400px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .pageLink{
+        color: black;
+        padding: 0.8em;
+        box-sizing: border-box;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .paginationContainer{
+        text-align: center;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        box-sizing: border-box;
+        margin: 2em 0;
+    }
+    .pageItem{
+        font-size: 1.5em;
+        font-family: Arial;
+        box-sizing: border-box;
+    }
+
+    .active{
+        background-color: #7F8C8D;
+        border-radius: 50px;
+        box-sizing: border-box;
+    }
+
+    .nn{
+        text-align: start;
+
+    }
+    .detailsSearch{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin-bottom: 5px;
+
+    }
+
+    input[type=checkbox] {
+          width: 50px;
+          height: 50px;
+          flex: 1 1 1;
+    }
+      
+      body {
+        margin: 40px;
+      }
+      
+      .dropdown {
+        position: relative;
+        font-size: 1em;
+        color: black;
+        width: 150px;
+      
+        .dropdown-list {
+          padding: 12px;
+          background: #7F8C8D;
+          position: absolute;
+          top: 60px;
+          left: -110px;
+          right: 2px;
+          transform-origin: 50% 0;
+          transform: scale(1, 0);
+          max-height: 66vh;
+          overflow-y: scroll;
+          width: 250px;
+        }
+        
+        .dropdown-option {
+          display: flex;
+          flex-direction: row;
+          opacity: 0;
+          width: 240px;
+        }
+        
+        .dropdown-label {
+          display: block;
+          height: 30px;
+          background: #7F8C8D;
+          border: 1px solid #7F8C8D;
+          padding: 6px 12px;
+          line-height: 1;
+          cursor: pointer;
+          
+          &:before {
+            content: '▼';
+            float: right;
+          }
+        }
+        
+        &.on {
+         .dropdown-list {
+            transform: scale(1, 1);
+            transition-delay: 0s;
+            
+            .dropdown-option {
+              opacity: 1;
+            }
+          }
+          
+          .dropdown-label:before {
+            content: '▲';
+          }
+        }
+        
+      }
+
     input{
         height:80px;
         width: 1400px;
         border-radius: 50px;
-        font-size: 50px;
+        font-size: 2em;
         text-indent: 80px; 
         display: block;
         border-style: none;
@@ -21,12 +139,11 @@ section{
         top:20px;
         left: 20px;
         height: 50px;
+        width: 50px;
+        z-index: 1000;
     }
 
     .containerDetails{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         margin-top: 20px;
     }
 
@@ -46,7 +163,9 @@ section{
         border-radius: 50px;
         padding: 20px 60px;
         border-style: none;
-
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     .buttonDetails{
@@ -67,13 +186,20 @@ section{
             box-shadow: 0;
             border-style: none; 
             background-color: transparent;
-            font-size: 30px;
+            font-size: 2em;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        &:hover{
+            cursor: pointer;
         }
     }
 
     .detailsSearch{
         display: flex;
         flex-direction: row;
+        font-size: 1em;
     }
     .nameDetails{
         color: black;
@@ -82,20 +208,26 @@ section{
         background-color:#7F8C8D;
         padding: 20px;
         border-radius: 50px;
-        font-size: 30px;
+        font-size: 2em;
         margin: 0 20px;
         form{     
-    font-family: Arial;
+            font-family: Arial;
             select{
                 font-family: Arial;
                 background-color:#7F8C8D;
                 border-style: none;
-                font-size: 30px;
+                font-size: 1em;
                 font-weight:normal;
                 size: 6;
+                &:hover{
+                    cursor: pointer;
+                }
                 option{
                 font-family: Arial;
                 background-color: #7F8C8D;
+                &:hover{
+                    cursor: pointer;
+                }
                 }
             }
         }
@@ -140,11 +272,9 @@ section{
     }
 
     .movieContainer{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
         margin: 10px auto;
-        justify-content: space-between;
         .movie{
             display: flex;
             flex-direction: row;
@@ -161,6 +291,9 @@ section{
                 width: 200px;
                 border-radius: 25px;
             }
+        }
+        .movie:last-child{
+            justify-self: start;
         }
     }
 }
