@@ -2,7 +2,7 @@ footer{
     background-color: #95A5A6;
     color: black;
     display: block;
-    height: 90px;
+    height: fit-content;
     .container{
         width: 1400px;
         margin: 0 auto;
@@ -15,6 +15,15 @@ footer{
         h1{
             margin-top: 0;
             margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width:1400px){
+    footer{
+        height: fit-content;
+        .container{
+            width: 100%;
         }
     }
 }

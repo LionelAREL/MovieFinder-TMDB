@@ -1,7 +1,10 @@
-section{ 
+section{
+    p{
+        text-align: left;
+    }
 
     .pages{
-        width: 1400px;
+        width: 100%;
         margin: 0 auto;
         text-align: center;
         display: flex;
@@ -29,13 +32,13 @@ section{
         font-size: 1.5em;
         font-family: Arial;
         box-sizing: border-box;
+        .active{
+            background-color: #7F8C8D;
+            border-radius: 50px;
+            box-sizing: border-box;
+        }
     }
 
-    .active{
-        background-color: #7F8C8D;
-        border-radius: 50px;
-        box-sizing: border-box;
-    }
 
     .nn{
         text-align: start;
@@ -120,7 +123,7 @@ section{
 
     input{
         height:80px;
-        width: 1400px;
+        width: 95%;
         border-radius: 50px;
         font-size: 2em;
         text-indent: 80px; 
@@ -129,9 +132,8 @@ section{
 
     }
 
-    .input-wrapper{     
+    .input-wrapper{   
         position: relative;
-        display: block;
     }
 
     .searchIcon{
@@ -156,7 +158,7 @@ section{
     .searchButton{
         position: absolute;
         top: -3px;
-        left: 1170px;
+        left: 80%;
         color: black;
         font-size: 40px;
         background-color: #7F8C8D;
@@ -233,13 +235,13 @@ section{
         }
 
     }
-
-    min-height: calc(100vh - 180px);
-    .container{   
+    min-height: calc(100vh - 170px);
+    .container{  
         width: 1400px;
-        margin: 0 auto;
+        margin: 0 0;
         text-align: center;
         padding-top: 40px;
+        margin: 0 auto;
         p{
             font-size: 40px;
             color: black;
@@ -256,6 +258,7 @@ section{
                 position: relative;
                 top: 40px;
                 margin-top: 20px;
+                
             }
 
             img{
@@ -274,7 +277,8 @@ section{
     .movieContainer{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-        margin: 10px auto;
+        margin: 10px 0;
+        width: 100%;
         .movie{
             display: flex;
             flex-direction: row;
@@ -293,7 +297,113 @@ section{
             }
         }
         .movie:last-child{
-            justify-self: start;
         }
     }
+}
+
+
+@media (max-width:1400px) {
+    section{
+        .container{
+            padding: auto 20px;
+            width: calc(100% - 40px);
+        }
+
+        input{
+            width:calc(100% - 80px);
+            margin: 0 40px;
+        }
+        .input-wrapper{
+            .searchButton{
+                position: absolute;
+                top: -3px;
+                left: auto;
+                right: 34px;
+                
+            }
+
+        }
+        
+        .searchIcon{
+            left: 60px;
+        }
+    }
+}
+
+@media (min-width:1400px) {
+    section{
+        .container{
+            width: 1400px;
+        }
+
+        input{
+            width:calc(100% - 80px);
+            margin: 0 40px;
+        }
+        .input-wrapper{
+            .searchButton{
+                position: absolute;
+                top: -3px;
+                left: auto;
+                right: 34px;
+                
+            }
+
+        }
+        
+        .searchIcon{
+            left: 60px;
+        }
+    }
+}
+
+@media (max-width:950px) {
+    section{
+
+        .detailsSearch{
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nameDetails{
+            margin: 10px 0;
+        }
+
+        .containerButton{
+            flex-direction: column;
+        }
+
+        .buttonDetails{
+            margin: 10px 0;
+            img{
+                left: 30px;
+                top: 20px;
+            }
+        }
+        .paginationContainer{
+            flex-direction: column;
+            .pageItem{
+                margin: 14px 0;
+            }
+        }
+
+        .container{
+            .first{
+                flex-direction: column;
+                align-items: center;
+                img{
+                    width: 80%;
+                }
+                p{
+                    margin-bottom: 40px;
+                }
+            }
+            p{
+                margin-bottom: 20px;
+            }
+
+        }
+
+    }
+
 }

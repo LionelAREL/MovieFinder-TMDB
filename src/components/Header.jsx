@@ -8,9 +8,9 @@ const Header = () => {
             <img src={logo} alt="" className="logo" />
             <nav>
                 <ul>
-                    <li><NavLink to ="/home" className={({ isActive }) => (isActive ? 'button active' : 'button inactive')}>Home</NavLink></li>
-                    <li><NavLink to ="/search" className={({ isActive }) => (isActive ? 'button  active' : 'button inactive')}>Search</NavLink></li>   
-                    <li><NavLink to ="/about" className={({ isActive }) => (isActive ? 'button  active' : 'button inactive')}>About</NavLink></li>
+                    <li><NavLink to ="/home" className={({ isActive }) => (isActive ? 'button active' : 'button inactive')}>Accueil</NavLink></li>
+                    <li><NavLink to ="/search" className={({ isActive }) => (isActive ? 'button  active' : 'button inactive')}>Recherche</NavLink></li>   
+                    <li><NavLink to ="/about" className={({ isActive }) => (isActive ? 'button  active' : 'button inactive')}>Contact</NavLink></li>
                 </ul>
             </nav>
         </div>

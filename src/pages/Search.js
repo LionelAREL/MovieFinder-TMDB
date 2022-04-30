@@ -40,8 +40,8 @@ const Search = () => {
             </div>
             <div className="pages">
                 <ReactPaginate
-                nextLabel="next >"
-                previousLabel="< previous"
+                nextLabel="Next"
+                previousLabel="Previous"
                 onPageChange={handlePageClick}
                 pageRangeDisplayed={5}
                 pageCount={totalPages > 500 ? 500:totalPages}

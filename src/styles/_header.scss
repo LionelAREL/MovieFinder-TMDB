@@ -3,7 +3,6 @@ header{
     text-align: center;
     text-decoration: none;
     background-color: #ECF0F1;
-    width: 100%;
     .container{
         margin: 0 auto;
         display: flex;
@@ -12,12 +11,12 @@ header{
         flex-direction: row;
         justify-content: space-between;
         .logo{
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: auto;
             margin: auto 0;
         }
         nav{
-            margin: auto 0;
+            margin: auto 20px;
             ul{
                 list-style-type: none;
                 display: flex;
@@ -41,4 +40,34 @@ header{
             }
         }
     }
+}
+
+@media (max-width:1400px){
+    header{
+        .container{
+            width: auto;
+            padding: 0 50px;
+        }
+    }
+}
+
+@media (max-width:950px) {
+    header{
+        .container{
+            img{
+                position: relative;
+                left: 20px;
+            }
+            flex-direction: column;
+            height: auto;
+            justify-content: baseline;
+            align-items: center;
+            nav ul{
+                flex-direction: column;
+                li{
+                    margin: 8px 0;
+                }
+                }
+            }
+        }
 }
