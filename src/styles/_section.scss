@@ -129,6 +129,8 @@ section{
         text-indent: 80px; 
         display: block;
         border-style: none;
+        border: none;
+        outline: none;
 
     }
 
@@ -165,6 +167,9 @@ section{
         border-radius: 50px;
         padding: 20px 60px;
         border-style: none;
+        border: none;
+        outline: none;
+
         &:hover{
             cursor: pointer;
         }
@@ -275,8 +280,10 @@ section{
     }
 
     .movieContainer{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
         margin: 10px 0;
         width: 100%;
         .movie{
@@ -296,8 +303,10 @@ section{
                 border-radius: 25px;
             }
         }
-        .movie:last-child{
-        }
+        &:after {
+            content: "";
+            width: 400px;
+          }
     }
 }
 
@@ -312,6 +321,7 @@ section{
         input{
             width:calc(100% - 80px);
             margin: 0 40px;
+            
         }
         .input-wrapper{
             .searchButton{
@@ -404,6 +414,19 @@ section{
 
         }
 
+        
+
+    }
+
+    @media (max-width:870px) {
+        section{
+        .movieContainer{
+            display: flex;
+            justify-content: center;
+        }
+        }
+
+           
     }
 
 }

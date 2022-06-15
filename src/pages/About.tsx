@@ -1,17 +1,7 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import axios from 'axios';
-import Movie from '../components/Movie';
-import avatar from "./../assets/avatar.jpg";
-
+const avatar =  require("./../assets/avatar.jpg")
 const About = () => {
     return (
-        <div className='main'>
-        <header>
-            <Header/>
-        </header>
-        <section>
             <div className="container">
                 <div className="first">
                     <img src={avatar} alt="" />
@@ -28,11 +18,6 @@ const About = () => {
                     Mes règles d'or : Efficacité. Qualité. Rapidité.
                 </p>
             </div>
-        </section>
-        <footer>
-            <Footer/>
-        </footer>
-        </div>
     );
 };
 

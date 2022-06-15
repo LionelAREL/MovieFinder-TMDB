@@ -1,12 +1,12 @@
-import axios from 'axios';
 import React from 'react';
+import FetchData from '../services/fetchData-service';
 
 const DetailsSearch = () => {
-    const [genres,setGenres] = React.useState([]);
+    const [genres,setGenres] = React.useState<any[]>([]);
 
     function inputChange(){
         let buttonDropdown = document.getElementsByClassName("dropdown-label")?.[0];
-        let input = [...document.getElementsByClassName("inputCheckbox")];
+        let input:any[] = [...Array.from(document.getElementsByClassName("inputCheckbox"))];
         const selected = input.filter((inp) => inp.checked).length;
         if(selected == 0){
             buttonDropdown.innerHTML = "None"
@@ -20,10 +20,10 @@ const DetailsSearch = () => {
     }
 
     React.useEffect(() => {
-        axios.get('https://api.themoviedb.org/3/genre/movie/list?api_key=7ca784ce7c3ed576b103a9591ded4609&language=en-US').then((res) => {
-            let genresApi = res.data.genres;
-            let genres = [];
-            genresApi.map((i) => {
+        FetchData.getMoviesGenre().then((res) => {
+            let genresApi = res.genres;
+            let genres:any[] = [];
+            genresApi.map((i:any) => {
                 genres.push(<label key={i.id} className="dropdown-option">
                 <input className='inputCheckbox' type="checkbox" name="dropdown-group" value={i.id} onChange={inputChange}/>
                 <div className='nn'>{i.name}</div>
@@ -36,7 +36,7 @@ const DetailsSearch = () => {
     let open = false;
     let checkAll = false;
     React.useEffect(() => {
-        let input = [...document.getElementsByClassName("inputCheckbox")];
+        let input:any[] = [...Array.from(document.getElementsByClassName("inputCheckbox"))];
         let buttonDropdown = document.getElementsByClassName("dropdown-label")?.[0];
         
         buttonDropdown.addEventListener("click",(e) =>{
@@ -77,6 +77,7 @@ const DetailsSearch = () => {
         <div className='detailsSearch'>
             <div className="nameDetails"><span> years : </span>
             <form>
+                <label>
                 <div className="multiselect">
                     <div className="selectBox" >
                     <select id = "years" defaultValue={''}>
@@ -84,6 +85,7 @@ const DetailsSearch = () => {
                     </select>
                     </div>
                 </div>
+            </label>
             </form>
             </div>
             <div className="nameDetails"> <span> adults : </span> 

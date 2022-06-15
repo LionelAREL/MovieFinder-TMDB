@@ -1,16 +1,7 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import axios from 'axios';
-import Movie from '../components/Movie';
 
 const Home = () => {
     return (
-        <div className='main'>
-        <header>
-            <Header/>
-        </header>
-        <section>
             <div className="container">
             <p>
                 Je suis un autodidacte en informatique, je code depuis mon plus jeune age dans divers langagues de programation.<br />
@@ -26,11 +17,6 @@ const Home = () => {
                 Vous pouvez me contacter en cliquant sur la page Contact.
             </p>
             </div>
-        </section>
-        <footer>
-            <Footer/>
-        </footer>
-        </div>
     );
 };
 
