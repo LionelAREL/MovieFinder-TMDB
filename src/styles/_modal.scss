@@ -1,0 +1,99 @@
+.Modal {
+    z-index: 2;
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    right: 5vw;
+    width: 90vw;
+    height: 90vh;
+    min-height: 625px;
+    background-color: #95a5a6;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+      "poster synopsis synopsis"
+      "youtube youtube youtube";
+
+    .title{
+        margin-top: 28px;
+        font-size: 28px;
+    }
+    .details{
+        grid-area: synopsis;
+        margin: 0 60px 0 20px;
+        .title{
+            text-align: center;
+        }
+        overflow: hidden;
+    }
+    .synopsis{
+        font-size: 20px;
+        padding: 20px 0;
+    }
+    .posterContainer{    
+        grid-area: poster;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .poster{
+            height:100%;
+            border-radius: 50px;
+        }
+    }
+    .close{
+        &:hover{
+            cursor: pointer;
+        }
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .youtubeContainer{
+        grid-area: youtube;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .youtube{
+            height: 100%;
+            width: 66%;
+        }
+    }
+}
+
+.Overlay {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  @media (max-width:930px) {
+    .Modal {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 33% 33% 33%;
+        grid-template-areas: 
+        "poster"
+        "synopsis"
+        "youtube";
+    }
+  }
+  @media (max-width:930px) {
+    .Modal {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 33% 33% 33%;
+        grid-template-areas: 
+        "poster"
+        "synopsis"
+        "youtube";
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+    }
+  }

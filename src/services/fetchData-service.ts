@@ -16,6 +16,11 @@ class FetchData {
         .then(this.handleResponse)
         .catch(this.handleError);
     }
+    static getMoviesVideo(movieId:any):Promise<any>{
+        return fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=7ca784ce7c3ed576b103a9591ded4609&language=en-US`)
+        .then(this.handleResponse)
+        .catch(this.handleError);
+    }
 
 
 

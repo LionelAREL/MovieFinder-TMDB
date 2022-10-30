@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter,  Route, Routes,Outlet} from "react-router-dom";
+import {BrowserRouter,  Route, Routes,Outlet, Navigate} from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home"
 import Search from "./pages/Search";
@@ -25,10 +25,11 @@ const Wrapper = () => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route path="/" element = {<Wrapper/>}>
           <Route path="/home" element = {<Home/>}/>
+          <Route path="" element = {<Navigate to="/home"/>}/>
           <Route path="/search" element = {<Search/>}/>
           <Route path="/Search/:search" element = {<Search/>}/>
           <Route path="/about" element = {<About/>}/>

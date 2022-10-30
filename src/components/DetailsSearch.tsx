@@ -10,12 +10,14 @@ const DetailsSearch = () => {
         const selected = input.filter((inp) => inp.checked).length;
         if(selected == 0){
             buttonDropdown.innerHTML = "None"
+            buttonDropdown.classList.remove("overflowText")
         }
         else if(selected == input.length){
             buttonDropdown.innerHTML = "All selected"
         }
         else{
             buttonDropdown.innerHTML = selected.toString() + " selected"
+            buttonDropdown.classList.add("overflowText")
         }
     }
 

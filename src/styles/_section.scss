@@ -1,4 +1,8 @@
 section{
+    box-sizing: border-box;
+    a{
+        color: white;
+    }
     p{
         text-align: left;
     }
@@ -42,6 +46,8 @@ section{
 
     .nn{
         text-align: start;
+        margin-left: 4px;
+        width:min-content;
 
     }
     .detailsSearch{
@@ -55,7 +61,8 @@ section{
     input[type=checkbox] {
           width: 50px;
           height: 50px;
-          flex: 1 1 1;
+          margin: 0;
+          margin-right: 8px;
     }
       
       body {
@@ -69,6 +76,7 @@ section{
         width: 150px;
       
         .dropdown-list {
+            z-index: 10;
           padding: 12px;
           background: #7F8C8D;
           position: absolute;
@@ -79,14 +87,18 @@ section{
           transform: scale(1, 0);
           max-height: 66vh;
           overflow-y: scroll;
-          width: 250px;
+          width: 270px;
+          .checked{
+            color: white;
+            margin-bottom: 10px;
+          }
         }
         
         .dropdown-option {
           display: flex;
           flex-direction: row;
           opacity: 0;
-          width: 240px;
+          width: auto;
         }
         
         .dropdown-label {
@@ -102,6 +114,12 @@ section{
             content: '▼';
             float: right;
           }
+        }
+
+        .overflowText{
+            position: relative;
+            top: -20px;
+            border-radius: 50px;
         }
         
         &.on {
@@ -144,7 +162,7 @@ section{
         left: 20px;
         height: 50px;
         width: 50px;
-        z-index: 1000;
+        z-index: 1;
     }
 
     .containerDetails{
@@ -287,6 +305,9 @@ section{
         margin: 10px 0;
         width: 100%;
         .movie{
+            &:hover{
+                cursor: pointer;
+            }
             display: flex;
             flex-direction: row;
             background-color: #95A5A6;
@@ -336,6 +357,7 @@ section{
         
         .searchIcon{
             left: 60px;
+            z-index: 1 !important;
         }
     }
 }

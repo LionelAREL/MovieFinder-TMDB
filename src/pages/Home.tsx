@@ -4,17 +4,20 @@ const Home = () => {
     return (
             <div className="container">
             <p>
-                Je suis un autodidacte en informatique, je code depuis mon plus jeune age dans divers langagues de programation.<br />
-                Je me suis interessé au developpement web par la suite et appris l'html, javascript et le css.<br />
-                Après, je me suis familiarisé avec plusieurs frameworks comme django, react-js et angular. <br />
-                Je me lance depuis le début du mois de mai 2022 en tant que freelanceur. <br />
-                Voici un de mes projets qui est l'utilisation de l'API de TMDB afin de réalisé une page de recherche de films, disponible en cliquant sur la page Recherche <br />
-                Voici quelques autres projets que j'ai déjà réalisé : 
+            I am a self-taught computer programmer, I code since my youngest age in various programming languages.
+            <br />
+            I became interested in web development later and learned html, javascript and css.
+            <br /> 
+            Afterwards, I became familiar with several frameworks like django, react-js and angular.
+            I started as a freelancer at the beginning of May 2022.
+            <br />
+            Here is one of my projects which is the use of the TMDB API in order to realize a page of search of films, available by clicking on the page Search
+            <br />
+            Here are the link of my portfolio that I’ve already done:
                     <ul>
-                        <li>link</li>
-                        <li>link</li>
+                        <li> <a href="https://www.lionel-arel.ga"  target="_blank">portfolio of my projects</a> </li>
                     </ul>
-                Vous pouvez me contacter en cliquant sur la page Contact.
+            You can contact me by clicking on the Contact page.
             </p>
             </div>
     );
