@@ -15,7 +15,7 @@ const Search = () => {
     const [pageCount, setPageCount] = React.useState(0);
     const [isDetails,setIsDetails] = React.useState(true);
     const [showModal,setShowModal] = React.useState(false);
-    const [movieVideo,setMovieVideo] = React.useState('');
+    const [movieVideo,setMovieVideo] = React.useState<string | null>(null);
     const [selectedMovie,setSelectedMovie] = React.useState<any>(null)
       
     function handleOpenModal(movieId: any){
@@ -26,13 +26,14 @@ const Search = () => {
                     continue;
                 }
                 else{
-                    setMovieVideo("");
+                    setMovieVideo(null);
                 }
             }
         })
         setShowModal(true);
     }
     const handleCloseModal = () => {
+        setMovieVideo(null);
         setShowModal(false);
     }
     

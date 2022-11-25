@@ -53,7 +53,7 @@
     .youtubeContainer{
         grid-area: youtube;
         display: flex;
-        justify-content: center;
+        justify-content:flex-end;
         align-items: center;
         .youtube{
             height: 100%;
@@ -95,5 +95,15 @@
         left: 5%;
         width: 90%;
         height: 90%;
+    }
+    .youtubeContainer{
+        grid-area: youtube;
+        display: flex;
+        justify-content:center !important;
+        align-items: center;
+        .youtube{
+            height: 100%;
+            width: 66%;
+        }
     }
   }
