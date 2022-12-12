@@ -1,4 +1,8 @@
+.Overlay{
+}
+
 .Modal {
+    padding: 20px;
     z-index: 2;
     position: absolute;
     top: 5vh;
@@ -22,12 +26,18 @@
     }
     .details{
         grid-area: synopsis;
-        margin: 0 60px 0 20px;
+        margin: 0 60px 10px 20px;
         .title{
             text-align: center;
         }
-        overflow: hidden;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
     }
+    .details::-webkit-scrollbar {
+        display: none;
+      }
+
     .synopsis{
         font-size: 20px;
         padding: 20px 0;
@@ -58,6 +68,40 @@
         .youtube{
             height: 100%;
             width: 66%;
+        }
+    }
+    .genres{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .genre{
+            display: inline;
+            width: fit-content;
+            padding: 4px 8px;
+            background-color:#7F8C8D;
+            border-radius: 50px;
+            margin: 8px 10px;
+        }
+    }
+    .campanies{
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .campanie{
+            display: flex;
+            align-items: center;
+            img{
+                width: 40px;
+                margin-right: 5px;
+            }
+            white-space: nowrap;
+            width: max-content;
+            padding: 4px 8px;
+            background-color:#7F8C8D;
+            border-radius: 50px;
+            margin: 8px 10px;
         }
     }
 }
@@ -105,5 +149,11 @@
             height: 100%;
             width: 66%;
         }
+    }
+  }
+
+  @media (max-width:600px) {
+    .Modal{
+        overflow-x: scroll;
     }
   }
